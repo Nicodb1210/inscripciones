@@ -35,9 +35,11 @@
         input, select { width: 100%; padding: 12px; border: 2px solid #e8f0e8; border-radius: 12px; font-size: 0.95em; transition: 0.3s; box-sizing: border-box; font-family: inherit; }
         input:focus { border-color: var(--primary); outline: none; background: #fff; box-shadow: 0 0 0 3px rgba(0, 143, 57, 0.1); }
 
+        /* Arreglo de Checks */
         .auth-card { background: #fff9f0; border: 2px solid #ffecb3; padding: 25px; border-radius: 20px; margin-top: 30px; }
-        .check-row { display: flex; gap: 12px; margin-bottom: 15px; cursor: pointer; align-items: flex-start; font-size: 0.9em; }
-        .check-row input { width: 22px; height: 22px; accent-color: var(--primary); flex-shrink: 0; }
+        .check-row { display: flex; gap: 12px; margin-bottom: 20px; cursor: pointer; align-items: flex-start; font-size: 0.85em; line-height: 1.4; color: #555; }
+        .check-row input { width: 20px; height: 20px; accent-color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+        .check-row span { display: block; }
 
         .btn-submit { width: 100%; padding: 20px; background: var(--primary); color: white; border: none; border-radius: 15px; font-size: 1.4em; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: 25px; box-shadow: 0 8px 15px rgba(0, 143, 57, 0.2); font-family: 'Fredoka'; }
         .btn-submit:hover { background: var(--primary-dark); transform: translateY(-3px); }
@@ -148,30 +150,19 @@
             <div class="auth-card">
                 <label class="check-row">
                     <input type="checkbox" required>
-                    <span>PROTECCIÓN DE DATOS. “De conformidad con lo dispuesto en la ley Orgánica 15/1999 de protección de Datos
-de carácter Personal de la Asociación de Futbol de la Estación de Cártama ( en lo sucesivo Club Atlético
-Estación, en C/ Francia nº 64 en Estación de Cártama, c.p. 29580, Málaga) que los datos que nos ha
-proporcionado formaran parte de un fichero automatizado de datos de carácter personal, responsabilidad de
-dicha entidad, con la finalidad de gestionar las comunicaciones que pudieran mantener con el personal de la
-entidad”. </span>
-
-                <label class="check-row">
-                    <input type="checkbox" required>
-<span>El interesado declara que los datos aportados son ciertos, a garantizar la notificación de cualquier cambio, así
-como otorgar su consentimiento para que puedan ser tratados. El interesado podrá ejercitar sus derechos de
-acceso, oposición y/o cancelación de sus datos mediante el envío de carta con la referencia de “Datos
-Personales a “Club Atlético Estación, en C/ Francia nº 64 en Estación de Cártama, c.p. 29580, Málaga. </span>
-</label>
-
-                <label class="check-row">
-                    <input type="checkbox" required>
-<span>UTILIZACIÓN DE IMÁGENES. En cumplimiento de la legislación vigente, se autoriza a Club Atlético Estación a
-utilizar las imágenes en que aparezca el jugador/a, de forma individual o en grupo, tomadas durante los
-entrenamientos, partidos tanto oficiales como amistosos. Estas imágenes podrán ser publicadas en la Web
-oficial del club,Redes sociales,documentación y presentaciones del club, así como de los medios de
-comunicación deportivos. Las fotografías tamaño carné se utilizarán para la base de datos del club y para
-formalizar la licencia federativa correspondiente.</span>
+                    <span><strong>PROTECCIÓN DE DATOS.</strong> De conformidad con lo dispuesto en la ley Orgánica 15/1999 de protección de Datos de carácter Personal de la Asociación de Futbol de la Estación de Cártama (en lo sucesivo Club Atlético Estación, en C/ Francia nº 64 en Estación de Cártama, c.p. 29580, Málaga) que los datos que nos ha proporcionado formaran parte de un fichero automatizado de datos de carácter personal, responsabilidad de dicha entidad, con la finalidad de gestionar las comunicaciones que pudieran mantener con el personal de la entidad.</span>
                 </label>
+
+                <label class="check-row">
+                    <input type="checkbox" required>
+                    <span>El interesado declara que los datos aportados son ciertos, a garantizar la notificación de cualquier cambio, así como otorgar su consentimiento para que puedan ser tratados. El interesado podrá ejercitar sus derechos de acceso, oposición y/o cancelación de sus datos mediante el envío de carta con la referencia de “Datos Personales" a Club Atlético Estación, en C/ Francia nº 64 en Estación de Cártama, c.p. 29580, Málaga.</span>
+                </label>
+
+                <label class="check-row">
+                    <input type="checkbox" required>
+                    <span><strong>UTILIZACIÓN DE IMÁGENES.</strong> En cumplimiento de la legislación vigente, se autoriza a Club Atlético Estación a utilizar las imágenes en que aparezca el jugador/a, de forma individual o en grupo, tomadas durante los entrenamientos, partidos tanto oficiales como amistosos. Estas imágenes podrán ser publicadas en la Web oficial del club, Redes sociales, documentación y presentaciones del club, así como de los medios de comunicación deportivos. Las fotografías tamaño carné se utilizarán para la base de datos del club y para formalizar la licencia federativa correspondiente.</span>
+                </label>
+
                 <label class="check-row">
                     <input type="checkbox" required>
                     <span>Confirmo que los datos son correctos y entiendo que la plaza solo se reserva tras el pago a José Ruiz.</span>
