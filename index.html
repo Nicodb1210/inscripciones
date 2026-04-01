@@ -12,13 +12,13 @@
         
         .main-card { max-width: 950px; margin: 0 auto; background: var(--white); border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; }
         
-        /* Cabecera con Imagen */
         .banner-container { width: 100%; line-height: 0; }
         .banner-img { width: 100%; height: auto; display: block; }
 
-        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 30px 20px; text-align: center; }
-        .hero h1 { font-family: 'Fredoka', cursive; margin: 0; font-size: 2.2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); text-transform: uppercase; }
-        
+        /* Notificación de agua */
+        .water-notice { background: #e0f2fe; color: #0369a1; padding: 15px; text-align: center; font-weight: 700; border-bottom: 1px solid #bae6fd; font-size: 1em; }
+        .water-notice i { margin-right: 8px; }
+
         .highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; padding: 20px; background: #f8fff9; border-bottom: 1px solid #eee; }
         .h-item { text-align: center; font-size: 0.9em; }
         .h-item i { color: var(--primary); font-size: 1.2em; display: block; margin-bottom: 5px; }
@@ -28,18 +28,16 @@
         .section-title i { background: var(--primary); color: white; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.7em; }
 
         .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
-        .col-1 { grid-column: span 1; } .col-2 { grid-column: span 2; } .col-3 { grid-column: span 3; }
         .col-4 { grid-column: span 4; } .col-6 { grid-column: span 6; } .col-12 { grid-column: span 12; }
+        .col-2 { grid-column: span 2; } .col-1 { grid-column: span 1; }
 
         label { display: block; font-size: 0.75em; font-weight: 700; color: #444; margin-bottom: 5px; text-transform: uppercase; }
         input, select { width: 100%; padding: 12px; border: 2px solid #e8f0e8; border-radius: 12px; font-size: 0.95em; transition: 0.3s; box-sizing: border-box; font-family: inherit; }
         input:focus { border-color: var(--primary); outline: none; background: #fff; box-shadow: 0 0 0 3px rgba(0, 143, 57, 0.1); }
 
-        /* Arreglo de Checks */
         .auth-card { background: #fff9f0; border: 2px solid #ffecb3; padding: 25px; border-radius: 20px; margin-top: 30px; }
         .check-row { display: flex; gap: 12px; margin-bottom: 20px; cursor: pointer; align-items: flex-start; font-size: 0.85em; line-height: 1.4; color: #555; }
         .check-row input { width: 20px; height: 20px; accent-color: var(--primary); flex-shrink: 0; margin-top: 2px; }
-        .check-row span { display: block; }
 
         .btn-submit { width: 100%; padding: 20px; background: var(--primary); color: white; border: none; border-radius: 15px; font-size: 1.4em; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: 25px; box-shadow: 0 8px 15px rgba(0, 143, 57, 0.2); font-family: 'Fredoka'; }
         .btn-submit:hover { background: var(--primary-dark); transform: translateY(-3px); }
@@ -54,18 +52,17 @@
 
 <div class="main-card">
     <div class="banner-container">
-        <img src="cabecera.png" alt="Club Atlético Estación" class="banner-img" onerror="this.src='https://via.placeholder.com/1200x400?text=CLUB+ATLETICO+ESTACION'">
+        <img src="cabeceraa.png" alt="Club Atlético Estación" class="banner-img" onerror="this.src='https://via.placeholder.com/1200x400?text=CLUB+ATLETICO+ESTACION'">
     </div>
 
-    <div class="hero">
-        <h1>JORNADAS DE FORMACIÓN</h1>
-        <p>Inscripción Oficial Temporada 2026</p>
+    <div class="water-notice">
+        <i class="fas fa-info-circle"></i> RECORDATORIO: Los alumnos deben traer una <strong>botella de agua grande</strong> para el relleno durante las jornadas.
     </div>
 
     <div class="highlights">
-        <div class="h-item"><i class="fas fa-calendar-check"></i><strong>29 JUN - 10 JUL</strong></div>
-        <div class="h-item"><i class="fas fa-wallet"></i><strong>PAGO SEGURO</strong></div>
-        <div class="h-item"><i class="fas fa-tshirt"></i><strong>EQUIPACIÓN</strong></div>
+        <div class="h-item"><i class="fas fa-swimmer"></i><strong>PISCINA</strong></div>
+        <div class="h-item"><i class="fas fa-smile"></i><strong>CASTILLO HINCHABLE</strong></div>
+        <div class="h-item"><i class="fas fa-apple-alt"></i><strong>FRUTA Y CHURROS</strong></div>
         <div class="h-item"><i class="fas fa-users"></i><strong>PLAZAS LIMITADAS</strong></div>
     </div>
 
@@ -79,13 +76,23 @@
 
             <div class="section-title"><i>1</i> Elección de Jornada</div>
             <div class="grid">
-                <div class="col-6"><label>Periodo de Inscripción *</label>
-                    <select name="Semanas de inscripción" required>
-                        <option value="1 Semana (55€)">1 Semana de Jornadas (55€)</option>
-                        <option value="2 Semanas (95€)">Quincena Completa (95€)</option>
+                <div class="col-4">
+                    <label>Periodo de Inscripción *</label>
+                    <select name="Semanas de inscripción" id="selectPeriodo" required>
+                        <option value="1 Semana (55€)">1 Semana (55€)</option>
+                        <option value="2 Semanas (100€)">Quincena Completa (100€)</option>
                     </select>
                 </div>
-                <div class="col-6"><label>Aula Matinal (07:30h)</label>
+                <div class="col-4">
+                    <label>Elegir Semana (si es solo 1) *</label>
+                    <select name="semana_especifica" id="selectSemana">
+                        <option value="No aplica (Quincena)">No aplica (He elegido Quincena)</option>
+                        <option value="Semana 1 (29 Junio - 3 Julio)">Semana 1 (29 Junio - 3 Julio)</option>
+                        <option value="Semana 2 (6 Julio - 10 Julio)">Semana 2 (6 Julio - 10 Julio)</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label>Aula Matinal (10€/semanales)</label>
                     <select name="aula_matinal">
                         <option value="No">No necesito aula matinal</option>
                         <option value="Si">Sí, deseo aula matinal</option>
@@ -144,30 +151,26 @@
                         <option value="S">S Adulto</option><option value="M">M Adulto</option><option value="L">L Adulto</option>
                     </select>
                 </div>
-                <div class="col-6"><label>Observaciones / Alergias</label><input type="text" name="observaciones"></div>
+                <div class="col-6"><label>Observaciones / Alergias / Intolerancias</label><input type="text" name="observaciones"></div>
             </div>
 
             <div class="auth-card">
                 <label class="check-row">
-                    <input type="checkbox" required>
+                    <input type="checkbox" name="auth_datos" required>
                     <span><strong>PROTECCIÓN DE DATOS.</strong> De conformidad con lo dispuesto en la ley Orgánica 15/1999 de protección de Datos de carácter Personal de la Asociación de Futbol de la Estación de Cártama (en lo sucesivo Club Atlético Estación, en C/ Francia nº 64 en Estación de Cártama, c.p. 29580, Málaga) que los datos que nos ha proporcionado formaran parte de un fichero automatizado de datos de carácter personal, responsabilidad de dicha entidad, con la finalidad de gestionar las comunicaciones que pudieran mantener con el personal de la entidad.</span>
                 </label>
 
                 <label class="check-row">
-                    <input type="checkbox" required>
+                    <input type="checkbox" name="auth_veracidad" required>
                     <span>El interesado declara que los datos aportados son ciertos, a garantizar la notificación de cualquier cambio, así como otorgar su consentimiento para que puedan ser tratados. El interesado podrá ejercitar sus derechos de acceso, oposición y/o cancelación de sus datos mediante el envío de carta con la referencia de “Datos Personales" a Club Atlético Estación, en C/ Francia nº 64 en Estación de Cártama, c.p. 29580, Málaga.</span>
                 </label>
 
                 <label class="check-row">
-                    <input type="checkbox" required>
+                    <input type="checkbox" name="auth_imagenes" required>
                     <span><strong>UTILIZACIÓN DE IMÁGENES.</strong> En cumplimiento de la legislación vigente, se autoriza a Club Atlético Estación a utilizar las imágenes en que aparezca el jugador/a, de forma individual o en grupo, tomadas durante los entrenamientos, partidos tanto oficiales como amistosos. Estas imágenes podrán ser publicadas en la Web oficial del club, Redes sociales, documentación y presentaciones del club, así como de los medios de comunicación deportivos. Las fotografías tamaño carné se utilizarán para la base de datos del club y para formalizar la licencia federativa correspondiente.</span>
                 </label>
 
-                <label class="check-row">
-                    <input type="checkbox" required>
-                    <span>Confirmo que los datos son correctos y entiendo que la plaza solo se reserva tras el pago a José Ruiz.</span>
-                </label>
-            </div>
+                </div>
 
             <button type="submit" id="submitBtn" class="btn-submit">ENVIAR INSCRIPCIÓN OFICIAL</button>
         </form>
