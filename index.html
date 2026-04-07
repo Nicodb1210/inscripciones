@@ -23,8 +23,10 @@
         .h-item { text-align: center; font-size: 0.9em; }
         .h-item i { color: var(--primary); font-size: 1.2em; display: block; margin-bottom: 5px; }
 
-        /* Estilo para el nuevo apartado de horario */
-        .schedule-notice { background: #fffbeb; color: #92400e; padding: 10px; text-align: center; font-weight: 700; border-bottom: 1px solid #fde68a; font-size: 1.1em; }
+        /* Apartado de horario y aula matinal */
+        .schedule-container { background: #fffbeb; border-bottom: 1px solid #fde68a; padding: 15px; text-align: center; }
+        .schedule-notice { color: #92400e; font-weight: 700; font-size: 1.1em; margin-bottom: 5px; }
+        .matinal-notice { color: #b45309; font-weight: 600; font-size: 0.95em; }
 
         .form-content { padding: 30px; }
         .section-title { display: flex; align-items: center; gap: 10px; margin: 35px 0 15px; color: var(--primary-dark); font-size: 1.2em; font-weight: 700; border-bottom: 2px solid #d8f3dc; padding-bottom: 8px; }
@@ -69,8 +71,13 @@
         <div class="h-item"><i class="fas fa-users"></i><strong>PLAZAS LIMITADAS</strong></div>
     </div>
 
-    <div class="schedule-notice">
-        <i class="fas fa-clock"></i> HORARIO: 9:00h a 14:00h
+    <div class="schedule-container">
+        <div class="schedule-notice">
+            <i class="fas fa-clock"></i> HORARIO: 9:00h a 14:00h
+        </div>
+        <div class="matinal-notice">
+            <i class="fas fa-sun"></i> Aula matinal: a partir de las 7:30h
+        </div>
     </div>
 
     <div class="form-content">
